@@ -252,11 +252,7 @@ class BaseColumnProfiler(Generic[BaseColumnProfilerT], metaclass=abc.ABCMeta):
     def load_from_dict(
         cls: type[BaseColumnProfilerT],
         data: dict[str, Any],
-<<<<<<< HEAD
         config: dict | None = None,
-=======
-        options: dict | None = None,
->>>>>>> 28d65fc (Staging/dev/profile serialization (#940))
     ) -> BaseColumnProfilerT:
         """
         Parse attribute from json dictionary into self.
@@ -264,27 +260,29 @@ class BaseColumnProfiler(Generic[BaseColumnProfilerT], metaclass=abc.ABCMeta):
         :param data: dictionary with attributes and values.
         :type data: dict[string, Any]
 <<<<<<< HEAD
+<<<<<<< HEAD
         :param config: config for loading column profiler params from dictionary
         :type config: Dict | None
 =======
         :param options: options for loading column profiler params from dictionary
         :type options: Dict | None
 >>>>>>> 28d65fc (Staging/dev/profile serialization (#940))
+=======
+        :param config: config for loading column profiler params from dictionary
+        :type config: Dict | None
+>>>>>>> aa108d2 (Hotfix: fix post feature serialization merge (#942))
 
         :return: Profiler with attributes populated.
         :rtype: BaseColumnProfiler
         """
-<<<<<<< HEAD
         if config is None:
             config = {}
 
         class_options = config.get(cls.__name__)
-=======
-        if options is None:
-            options = {}
+        if config is None:
+            config = {}
 
-        class_options = options.get(cls.__name__)
->>>>>>> 28d65fc (Staging/dev/profile serialization (#940))
+        class_options = config.get(cls.__name__)
         profile: BaseColumnProfilerT = cls(data["name"], class_options)
 
         time_vals = data.pop("times")
