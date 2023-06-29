@@ -9,7 +9,11 @@ from collections import Counter, defaultdict
 from numpy import ndarray
 from pandas import DataFrame, Series
 
+<<<<<<< HEAD
 from . import profiler_utils
+=======
+from . import utils
+>>>>>>> 28d65fc (Staging/dev/profile serialization (#940))
 from .base_column_profilers import BaseColumnProfiler
 from .profiler_options import TextProfilerOptions
 
